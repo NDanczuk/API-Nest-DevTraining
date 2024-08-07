@@ -18,11 +18,6 @@ export class CreateCoursesTagsTable1723055532646 implements MigrationInterface {
             type: 'timestamp',
             default: 'CURRENT_TIMESTAMP',
           },
-          {
-            name: 'updated_at',
-            type: 'timestamp',
-            default: 'CURRENT_TIMESTAMP',
-          },
         ],
       }),
     );

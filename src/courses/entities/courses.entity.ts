@@ -6,7 +6,6 @@ import {
   JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
 } from 'typeorm';
 import { Tag } from './tags.entity';
 import { randomUUID } from 'crypto';
@@ -30,9 +29,6 @@ export class Course {
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
-
-  @UpdateDateColumn({ type: 'timestamp' })
-  updated_at: Date;
 
   @BeforeInsert()
   generatedId() {
