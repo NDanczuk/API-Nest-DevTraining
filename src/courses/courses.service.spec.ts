@@ -8,7 +8,7 @@ describe('CoursesService unit tests', () => {
   let expectOutputTags: any;
   let expectOutputCourses: any;
   let mockCourseRepository: any;
-  let mockTargetRepository: any;
+  let mockTagRepository: any;
 
   beforeEach(async () => {
     service = new CoursesService();
@@ -32,6 +32,16 @@ describe('CoursesService unit tests', () => {
     mockCourseRepository = {
       create: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourses)),
       save: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourses)),
+      update: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourses)),
+      findAll: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourses)),
+      find: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourses)),
+      findOne: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourses)),
+      remove: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourses)),
+    };
+
+    mockTagRepository = {
+      create: jest.fn().mockReturnValue(Promise.resolve(expectOutputTags)),
+      findOne: jest.fn().mockReturnValue(Promise.resolve(expectOutputTags)),
     };
   });
 
