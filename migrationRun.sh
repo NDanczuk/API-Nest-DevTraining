@@ -1,0 +1,1 @@
+npx typeorm migration:run -d dist/database/orm-cli-config.js

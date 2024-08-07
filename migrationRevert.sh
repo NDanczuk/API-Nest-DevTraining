@@ -1,0 +1,1 @@
+npx typeorm migration:revert -d dist/database/orm-cli-config.js

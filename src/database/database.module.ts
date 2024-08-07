@@ -12,7 +12,8 @@ export const dataSourceOptions: DataSourceOptions = {
   password: 'docker',
   database: 'devtraining',
   entities: [Course, Tag],
-  synchronize: true,
+  synchronize: false,
+  // synchronize: true, Use only in dev, never in production
 };
 
 @Module({
