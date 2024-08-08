@@ -107,6 +107,7 @@ describe('CoursesService unit tests', () => {
 
     const course = await service.update(id, updateCourseDTO);
 
+    expect(mockCourseRepository.findOne).toHaveBeenCalled();
     expect(mockCourseRepository.save).toHaveBeenCalled();
     expect(expectOutputCourses).toStrictEqual(course);
   });
