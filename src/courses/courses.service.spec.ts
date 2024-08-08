@@ -86,7 +86,7 @@ describe('CoursesService unit tests', () => {
     expect(expectOutputCourses).toStrictEqual(courses);
   });
 
-  it('should create a course', async () => {
+  it('should get a course by id', async () => {
     //@ts-expect-error defined part of methods
     service['courseRepository'] = mockCourseRepository;
     //@ts-expect-error defined part of methods
@@ -98,9 +98,9 @@ describe('CoursesService unit tests', () => {
       tags: [' nestjs '],
     };
 
-    const courses = await service.findAll();
+    const course = await service.findOne(id);
 
-    expect(mockCourseRepository.find).toHaveBeenCalled();
-    expect(expectOutputCourses).toStrictEqual(courses);
+    expect(mockCourseRepository.findOne).toHaveBeenCalled();
+    expect(expectOutputCourses).toStrictEqual(course);
   });
 });
