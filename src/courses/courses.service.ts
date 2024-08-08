@@ -51,8 +51,8 @@ export class CoursesService {
       (await Promise.all(
         updateCourseDTO.tags.map((name) => this.preloadTagByName(name)),
       ));
-    const course = await this.courseRepository.findOneBy({
-      id,
+    const course = await this.courseRepository.findOne({
+      where: { id },
     });
 
     if (!course) {
