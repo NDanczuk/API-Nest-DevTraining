@@ -103,4 +103,23 @@ describe('CoursesService unit tests', () => {
     expect(mockCourseRepository.findOne).toHaveBeenCalled();
     expect(expectOutputCourses).toStrictEqual(course);
   });
+
+  it('should delete a course', async () => {
+    //@ts-expect-error defined part of methods
+    service['courseRepository'] = mockCourseRepository;
+    //@ts-expect-error defined part of methods
+    service['tagRepository'] = mockTagRepository;
+
+    const createCourseDTO: CreateCourseDTO = {
+      name: 'test',
+      description: 'test description',
+      tags: [' nestjs '],
+    };
+
+    const course = await service.remove(id);
+
+    expect(mockCourseRepository.findOne).toHaveBeenCalled();
+    expect(mockCourseRepository.remove).toHaveBeenCalled();
+    expect(expectOutputCourses).toStrictEqual(course);
+  });
 });
